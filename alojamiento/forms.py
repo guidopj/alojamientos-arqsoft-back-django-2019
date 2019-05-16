@@ -4,11 +4,11 @@ from .models import Alojamiento
 class AlojamientoForm(forms.ModelForm):
     class Meta:
         model = Alojamiento
-        fields = ['provincia', 'localidad', 'direccion', 'tipo_alojamiento', 'cant_estrellas']
+        fields = ['state', 'town', 'address', 'type', 'category']
         widgets = {
-            'provincia': forms.TextInput(attrs={}),
-            'localidad': forms.TextInput(attrs={}),
-            'direccion': forms.TextInput(attrs={}),
-            'tipo_alojamiento': forms.TextInput(attrs={}),
-            'cant_estrellas': forms.NumberInput(attrs={}),
+            'state': forms.TextInput(attrs={}),
+            'town': forms.TextInput(attrs={}),
+            'address': forms.TextInput(attrs={}),
+            'type': forms.TextInput(attrs={}),
+            'category': forms.TextInput(attrs={}),
 }
