@@ -1,0 +1,2 @@
+i had to install libpq-dev to make the `pip install psycopg2` to work 
+
