@@ -13,7 +13,6 @@ markdown-include==0.5.1
 MarkupSafe==1.1.1
 mkdocs==1.0.4
 mkdocs-material==4.1.0
-pkg-resources==0.0.0
 psycopg2==2.8.3
 Pygments==2.3.1
 pymdown-extensions==6.0
