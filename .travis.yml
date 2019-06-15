@@ -16,3 +16,10 @@ before_script:
 
 script:
   - python manage.py test
+
+deploy:
+  provider: heroku
+  api_key: env HEROKU_API_KEY
+  app: alojamiento-backend
+  on:
+    branch: master
