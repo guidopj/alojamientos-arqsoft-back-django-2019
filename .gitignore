@@ -28,7 +28,7 @@ Temporary Items
 # Byte-compiled / optimized / DLL files
 # __pycache__/
 *.py[cod]
-# alojamientos_arqsoft_back_python_2019/__pycache__*
+alojamientos_arqsoft_back_python_2019/__pycache__*
 **__pycache__**
 *.pyc
 
@@ -89,4 +89,5 @@ __pycache__/
 local_settings.py
 
 .env
+
 db.sqlite3
