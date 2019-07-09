@@ -6,9 +6,10 @@ import logging
 logger = logging.getLogger(__name__)
 import json
 
-# Create your views here.
+# Create your views here
+
 @csrf_exempt
-def crearAlojamiento(request):
+def create_accommodation(request):
 
     if request.method == 'POST':
         data = request.body.decode('utf-8')
