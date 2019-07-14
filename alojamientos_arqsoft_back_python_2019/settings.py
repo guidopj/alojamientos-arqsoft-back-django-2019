@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'alojamiento-backend.herokuapp.com',
-    'localhost'
+    'localhost',
+    '127.0.0.1'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
