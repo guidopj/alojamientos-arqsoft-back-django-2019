@@ -7,18 +7,18 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 import logging
 import json
+
+logger = logging.getLogger(__name__)
 # Create your views here.
 
 @csrf_exempt
 def registerUser(request):
-    logger = logging.getLogger(__name__)
     
     if request.method == 'POST':
         data = request.body.decode('utf-8')
         received_json_data = json.loads(data)
         form = UserCreationForm(received_json_data)
         if form.is_valid():
-            logger.error("is Valid")
             username = form.cleaned_data['username']
             #email = form.cleaned_data['email']
             password = form.cleaned_data['password1']
@@ -33,15 +33,18 @@ def registerUser(request):
     else:
         return HttpResponse("nada")
 
+@csrf_exempt
 def loginUser(request):
+    data = request.body.decode('utf-8')
+    received_json_data = json.loads(data)
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(username=username,password=password)
+        username = received_json_data['username']
+        password = received_json_data['password']
+        user = authenticate(username=username,password=password)
+        if user is not None:
             login(request,user)
             return HttpResponse(user)
         else:
-            return HttpResponseServerError(form.errors)
+            return HttpResponseServerError("Credentials didnt matched")
+    else:
+        return HttpResponseServerError("method not allowed")
