@@ -2,3 +2,4 @@ gunicorn==19.9.0
 django==2.2.3
 dj_database_url
 django-cors-headers==1.1.0
+psycopg2
